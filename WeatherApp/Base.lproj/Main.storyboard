@@ -42,6 +42,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="pMR-pe-ho6"/>
+                    <connections>
+                        <outlet property="tableView" destination="DPc-IJ-OR2" id="Nb3-Kd-rc8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +53,7 @@
         <!--City WeatherVC-->
         <scene sceneID="U9a-9c-XVD">
             <objects>
-                <viewController id="1lb-P9-FSG" customClass="CityWeatherVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityWeatherVC" id="1lb-P9-FSG" customClass="CityWeatherVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nYW-q0-qt1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +82,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j2g-VI-jZb"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ipk-tM-UCP" id="prY-Ok-wSa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmx-ve-DEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
