@@ -105,6 +105,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="150" height="126"/>
             <connections>
+                <outlet property="backView" destination="OYQ-Bx-yzI" id="huX-0f-9di"/>
                 <outlet property="dayLbl" destination="dUI-p9-fgP" id="dn0-2B-KQp"/>
                 <outlet property="dayTempLbl" destination="791-Wt-HQk" id="Vyh-P0-vCu"/>
                 <outlet property="nightTempLbl" destination="Ct4-ON-Cbg" id="kIk-qI-cgv"/>

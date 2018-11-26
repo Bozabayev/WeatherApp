@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--City ListVC-->
+        <!--Главная-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CityListVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pMR-pe-ho6"/>
+                    <navigationItem key="navigationItem" title="Главная" id="pMR-pe-ho6"/>
                     <connections>
                         <outlet property="tableView" destination="DPc-IJ-OR2" id="Nb3-Kd-rc8"/>
                     </connections>

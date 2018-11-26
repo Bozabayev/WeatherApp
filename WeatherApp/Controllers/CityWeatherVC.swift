@@ -25,8 +25,19 @@ class CityWeatherVC: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "CityWeatherCell")
         tableView.register(nibCollection, forCellReuseIdentifier: "CityWeatherCollection")
         loadWeatherInfo()
+        }
+    
+    
+    func getDayOfWeek(_ today: String) -> Int? {
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let todayDate = formatter.date(from: today) else { return nil }
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: todayDate)
+        return (weekDay - 1)
     }
     
+   
     
     
     
@@ -72,6 +83,12 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
         case firstIndex:
             if let firstCell = tableView.dequeueReusableCell(withIdentifier: "CityWeatherCell", for: firstIndex) as? CityWeatherCell {
                 guard let data = weatherData else {return firstCell}
+                print(weatherCondition["clear"])
+                
+                var todayData = data.now_dt
+                todayData.removeLast(min(todayData.count, 14))
+                let dayOfWeek = getDayOfWeek(todayData)
+                firstCell.todayDateLbl.text = "\(DaysOfWeek[dayOfWeek!]), \(day) \(MonthOfYear[month])"
                 firstCell.averageTempLbl.text = "\(data.fact?.temp as! Int)ºC"
                 guard let icon = data.fact?.icon else {return firstCell}
                 firstCell.configureCell(icon_path: icon as! String)
@@ -122,6 +139,14 @@ extension CityWeatherVC : UICollectionViewDelegate,UICollectionViewDataSource , 
             let weatherdata = data.foreCast[indexPath.row]
             cell.dayTempLbl.text = "\(String(describing: weatherdata.parts?.dayShort?.temp as! Int))ºC"
             cell.nightTempLbl.text = "\(String(describing: weatherdata.parts?.nightShort?.temp as! Int))ºC"
+            var todayData = data.now_dt
+            todayData.removeLast(min(todayData.count, 14))
+            if todayData == weatherdata.date {
+                cell.dayLbl.text = "Сегодня"
+            } else {
+               let dayOfWeek = getDayOfWeek(weatherdata.date!)
+                cell.dayLbl.text = DaysOfWeek[dayOfWeek!]
+            }
             
             return cell
         }

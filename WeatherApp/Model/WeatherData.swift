@@ -12,6 +12,9 @@ import ObjectMapper
 
 
 
+
+
+
 class WeatherData: Mappable {
    
     

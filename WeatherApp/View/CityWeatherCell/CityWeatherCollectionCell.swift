@@ -11,6 +11,7 @@ import UIKit
 class CityWeatherCollectionCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var dayLbl: UILabel!
     
     @IBOutlet weak var dayTempLbl: UILabel!
@@ -18,7 +19,8 @@ class CityWeatherCollectionCell: UICollectionViewCell {
     @IBOutlet weak var nightTempLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
+        
     }
 
 }

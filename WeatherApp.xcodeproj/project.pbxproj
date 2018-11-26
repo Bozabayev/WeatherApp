@@ -29,6 +29,7 @@
 		91ADDE9C21AC2168008A9DC4 /* ForeCastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADDE9B21AC2168008A9DC4 /* ForeCastData.swift */; };
 		91ADDE9E21AC2218008A9DC4 /* PartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADDE9D21AC2218008A9DC4 /* PartsData.swift */; };
 		91ADDEA021AC229C008A9DC4 /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADDE9F21AC229C008A9DC4 /* WeatherDetail.swift */; };
+		91ADDEA221AC6419008A9DC4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADDEA121AC6419008A9DC4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		91ADDE9B21AC2168008A9DC4 /* ForeCastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeCastData.swift; sourceTree = "<group>"; };
 		91ADDE9D21AC2218008A9DC4 /* PartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsData.swift; sourceTree = "<group>"; };
 		91ADDE9F21AC229C008A9DC4 /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
+		91ADDEA121AC6419008A9DC4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C0EA0F44A783925F648E9840 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D27DB0211C4E857E9C4A39EC /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 				91ADDE9B21AC2168008A9DC4 /* ForeCastData.swift */,
 				91ADDE9D21AC2218008A9DC4 /* PartsData.swift */,
 				91ADDE9F21AC229C008A9DC4 /* WeatherDetail.swift */,
+				91ADDEA121AC6419008A9DC4 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				91ADDE9421ABE648008A9DC4 /* WeatherService.swift in Sources */,
 				91ADDE8021ABC835008A9DC4 /* CityWeatherVC.swift in Sources */,
 				91ADDE6B21ABC5AA008A9DC4 /* WeatherApp.xcdatamodeld in Sources */,
+				91ADDEA221AC6419008A9DC4 /* Constants.swift in Sources */,
 				91ADDE8921ABE1DA008A9DC4 /* CityWeatherCell.swift in Sources */,
 				91ADDE9A21AC2071008A9DC4 /* FactData.swift in Sources */,
 				91ADDE6321ABC5AA008A9DC4 /* AppDelegate.swift in Sources */,

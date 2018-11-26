@@ -25,22 +25,22 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-0m-QMn">
-                        <rect key="frame" x="88" y="156.5" width="150" height="77.5"/>
+                        <rect key="frame" x="46" y="156.5" width="234" height="77.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-7g-WQq">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg2-gq-LuA">
-                                <rect key="frame" x="0.0" y="28.5" width="150" height="20.5"/>
+                                <rect key="frame" x="0.0" y="28.5" width="234" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4P-wR-502">
-                                <rect key="frame" x="0.0" y="57" width="150" height="20.5"/>
+                                <rect key="frame" x="0.0" y="57" width="234" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -57,12 +57,12 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DD2-0m-QMn" firstAttribute="leading" secondItem="RRU-Bu-8hx" secondAttribute="leading" id="BBz-tY-sTr"/>
                     <constraint firstItem="qlj-Py-owi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ISf-55-221"/>
                     <constraint firstItem="qlj-Py-owi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MYa-eh-8NN"/>
+                    <constraint firstItem="DD2-0m-QMn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="30" id="ThK-eA-79l"/>
                     <constraint firstItem="RRU-Bu-8hx" firstAttribute="top" secondItem="qlj-Py-owi" secondAttribute="bottom" constant="8" id="Ukc-Ye-Poo"/>
                     <constraint firstItem="RRU-Bu-8hx" firstAttribute="trailing" secondItem="qlj-Py-owi" secondAttribute="trailing" id="VtK-KH-IiW"/>
-                    <constraint firstItem="DD2-0m-QMn" firstAttribute="trailing" secondItem="RRU-Bu-8hx" secondAttribute="trailing" id="YY3-bp-vyf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="DD2-0m-QMn" secondAttribute="trailing" constant="30" id="YiQ-Nc-nCN"/>
                     <constraint firstItem="RRU-Bu-8hx" firstAttribute="leading" secondItem="qlj-Py-owi" secondAttribute="leading" id="i8a-i1-Z2e"/>
                     <constraint firstItem="DD2-0m-QMn" firstAttribute="top" secondItem="RRU-Bu-8hx" secondAttribute="bottom" constant="8" id="p4w-Pe-q0q"/>
                 </constraints>

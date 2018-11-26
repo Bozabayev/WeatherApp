@@ -45,10 +45,6 @@ class CityWeatherCell: UITableViewCell {
         svgImage.frame = svgImageView.bounds
         svgImage.contentMode = .scaleAspectFit
         svgImageView.addSubview(svgImage)
-
-        
-        
-        
     }
 
   
