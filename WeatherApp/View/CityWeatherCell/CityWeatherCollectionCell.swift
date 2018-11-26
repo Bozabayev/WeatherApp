@@ -11,16 +11,23 @@ import UIKit
 class CityWeatherCollectionCell: UICollectionViewCell {
     
     
+   
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var dayLbl: UILabel!
     
     @IBOutlet weak var dayTempLbl: UILabel!
     
     @IBOutlet weak var nightTempLbl: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
     
-        
+      
+       self.contentView.sendSubviewToBack(shadowView)
     }
 
 }

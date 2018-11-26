@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almaty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3C-VV-VUe">
-                        <rect key="frame" x="16" y="11" width="77" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Алматы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3C-VV-VUe">
+                        <rect key="frame" x="16" y="11" width="90.5" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="2WO-l3-6xr"/>
                         </constraints>

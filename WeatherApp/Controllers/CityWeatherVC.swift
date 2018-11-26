@@ -25,6 +25,9 @@ class CityWeatherVC: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "CityWeatherCell")
         tableView.register(nibCollection, forCellReuseIdentifier: "CityWeatherCollection")
         loadWeatherInfo()
+        navigationItem.title = "Погода"
+        UIApplication.shared.statusBarView?.backgroundColor = #colorLiteral(red: 0.9139772058, green: 0, blue: 0, alpha: 1)
+        LoadingIndicator().showActivityIndicator(uiView: self.view)
         }
     
     
@@ -83,7 +86,8 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
         case firstIndex:
             if let firstCell = tableView.dequeueReusableCell(withIdentifier: "CityWeatherCell", for: firstIndex) as? CityWeatherCell {
                 guard let data = weatherData else {return firstCell}
-                print(weatherCondition["clear"])
+                guard let condition = data.fact?.condition else {return firstCell}
+                firstCell.weatherOverviewLbl.text = "\(String(describing: weatherCondition[condition]!).capitalizingFirstLetter())"
                 
                 var todayData = data.now_dt
                 todayData.removeLast(min(todayData.count, 14))
@@ -92,7 +96,7 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
                 firstCell.averageTempLbl.text = "\(data.fact?.temp as! Int)ºC"
                 guard let icon = data.fact?.icon else {return firstCell}
                 firstCell.configureCell(icon_path: icon as! String)
-                firstCell.cityNameLbl.text = "Almaty"
+                firstCell.cityNameLbl.text = "Алматы"
                 return firstCell
             }
         case secondIndex:
@@ -147,7 +151,7 @@ extension CityWeatherVC : UICollectionViewDelegate,UICollectionViewDataSource , 
                let dayOfWeek = getDayOfWeek(weatherdata.date!)
                 cell.dayLbl.text = DaysOfWeek[dayOfWeek!]
             }
-            
+            LoadingIndicator().hideActivityIndicator(uiView: self.view)
             return cell
         }
         return UICollectionViewCell()
@@ -156,7 +160,7 @@ extension CityWeatherVC : UICollectionViewDelegate,UICollectionViewDataSource , 
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: 125, height: 125)
     }
     
     
@@ -167,5 +171,13 @@ extension CityWeatherVC : UICollectionViewDelegate,UICollectionViewDataSource , 
     
     
     
+    
+}
+
+extension UIApplication {
+    
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
     
 }

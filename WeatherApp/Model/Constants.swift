@@ -67,3 +67,14 @@ let date = Date()
 let calendar = Calendar.current
 let month = calendar.component(.month, from: date)
 let day = calendar.component(.day, from: date)
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}

@@ -19,8 +19,8 @@ let nib = UINib(nibName: "CityListCell", bundle: nil)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(nib, forCellReuseIdentifier: "CityListCell")
-        navigationController?.title = "Главная"
-    }
+        navigationItem.title = "Главная"
+            }
     
 
 
@@ -51,6 +51,14 @@ extension CityListVC : UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CityWeatherVC")
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Список городов"
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 80
     }
     
     
