@@ -16,9 +16,12 @@ class CityWeatherVC: UIViewController {
     let nib = UINib(nibName: "CityWeatherCell", bundle: nil)
     let nibCollection = UINib(nibName: "CityWeatherCollection", bundle: nil)
     let provider = MoyaProvider<WeatherService>()
+    var weatherData : WeatherData?
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(nib, forCellReuseIdentifier: "CityWeatherCell")
         tableView.register(nibCollection, forCellReuseIdentifier: "CityWeatherCollection")
         loadWeatherInfo()
@@ -33,10 +36,12 @@ class CityWeatherVC: UIViewController {
         provider.request(.weatherDetail(lat: 43.25667, lon: 76.92861)) { [weak self](result) in
             guard let strongSelf = self else {return}
             switch result {
-            case .success(let reponse):
+            case .success(let response):
                 do {
-                    let jsondata = try reponse.mapJSON() as! [String : Any]
-                    
+                    let jsondata = try response.mapJSON() as! [String : Any]
+                    strongSelf.weatherData = WeatherData(JSON: jsondata)
+                   
+                    strongSelf.tableView.reloadData()
                 } catch {
                     
                 }
@@ -66,12 +71,18 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
         switch indexPath {
         case firstIndex:
             if let firstCell = tableView.dequeueReusableCell(withIdentifier: "CityWeatherCell", for: firstIndex) as? CityWeatherCell {
-                
+                guard let data = weatherData else {return firstCell}
+                firstCell.averageTempLbl.text = "\(data.fact?.temp as! Int)ºC"
+                guard let icon = data.fact?.icon else {return firstCell}
+                firstCell.configureCell(icon_path: icon as! String)
+                firstCell.cityNameLbl.text = "Almaty"
                 return firstCell
             }
         case secondIndex:
             if let secondCell = tableView.dequeueReusableCell(withIdentifier: "CityWeatherCollection", for: secondIndex) as? CityWeatherCollection {
-                
+                secondCell.collectionView.delegate = self
+                secondCell.collectionView.dataSource = self
+                secondCell.collectionView.reloadData()
                 return secondCell
             }
         default:
@@ -81,6 +92,19 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
        
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 300
+        case 1:
+            return 200
+      
+        default:
+            return 300
+            
+        }
+    }
+    
     
     
 }
@@ -88,11 +112,32 @@ extension CityWeatherVC : UITableViewDataSource, UITableViewDelegate {
 extension CityWeatherVC : UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        guard let numberOfItmes = weatherData?.foreCast.count else {return 1}
+        return numberOfItmes
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityWeatherCollectionCell", for: indexPath) as? CityWeatherCollectionCell {
+            guard let data = weatherData else {return cell}
+            let weatherdata = data.foreCast[indexPath.row]
+            cell.dayTempLbl.text = "\(String(describing: weatherdata.parts?.dayShort?.temp as! Int))ºC"
+            cell.nightTempLbl.text = "\(String(describing: weatherdata.parts?.nightShort?.temp as! Int))ºC"
+            
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 120)
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
     

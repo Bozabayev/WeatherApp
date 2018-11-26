@@ -9,7 +9,13 @@
 import UIKit
 
 class CityWeatherCollectionCell: UICollectionViewCell {
-
+    
+    
+    @IBOutlet weak var dayLbl: UILabel!
+    
+    @IBOutlet weak var dayTempLbl: UILabel!
+    
+    @IBOutlet weak var nightTempLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

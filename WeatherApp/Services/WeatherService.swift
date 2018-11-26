@@ -28,7 +28,7 @@ extension WeatherService : TargetType {
     var path: String {
         switch self {
         case .weatherDetail:
-            return "forecast?"
+            return "forecast"
         }
     }
     

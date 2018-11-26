@@ -16,6 +16,8 @@ class CityListVC: UIViewController {
 let nib = UINib(nibName: "CityListCell", bundle: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(nib, forCellReuseIdentifier: "CityListCell")
         navigationController?.title = "Главная"
     }
@@ -32,6 +34,7 @@ let nib = UINib(nibName: "CityListCell", bundle: nil)
 
 
 extension CityListVC : UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }

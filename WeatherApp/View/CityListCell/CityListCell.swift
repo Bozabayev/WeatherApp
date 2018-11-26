@@ -11,6 +11,8 @@ import UIKit
 class CityListCell: UITableViewCell {
     
     
+    @IBOutlet weak var cityNameLbl: UILabel!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
