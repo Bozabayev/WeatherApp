@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0ECA241D49B13FC0A80AE907227402CE"
-               BlueprintName = "SDWebImage"
+               BlueprintIdentifier = "9B74AB6211D004E54237F207D174A535"
+               BlueprintName = "PocketSVG"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SDWebImage.framework">
+               BuildableName = "PocketSVG.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

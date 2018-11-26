@@ -7,14 +7,15 @@
 //
 
 import UIKit
-import SDWebImage
+import PocketSVG
 
 class CityWeatherCell: UITableViewCell {
     
     
     
     
-    @IBOutlet weak var weatherImg: UIImageView!
+
+    @IBOutlet weak var svgImageView: UIView!
     
     @IBOutlet weak var averageTempLbl: UILabel!
     
@@ -39,11 +40,11 @@ class CityWeatherCell: UITableViewCell {
     func configureCell(icon_path: String?) {
         guard let icon = icon_path else {return}
         let URL_IMAGE = "https://yastatic.net/weather/i/icons/blueye/color/svg/\(icon).svg"
-        weatherImg.sd_setImage(with: URL(string: URL_IMAGE)) {(image, error, cacheType, imageURL) in
-            
-            self.weatherImg.image = image
-        }
-        
+        let svgImage = SVGImageView.init(contentsOf: URL(string: URL_IMAGE)!)
+       print(svgImage)
+        svgImage.frame = svgImageView.bounds
+        svgImage.contentMode = .scaleAspectFit
+        svgImageView.addSubview(svgImage)
 
         
         

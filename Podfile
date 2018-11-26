@@ -10,5 +10,6 @@ target 'WeatherApp' do
   pod 'Moya'
   pod 'ObjectMapper'
   pod 'SDWebImage'
+  pod 'PocketSVG'
 
 end

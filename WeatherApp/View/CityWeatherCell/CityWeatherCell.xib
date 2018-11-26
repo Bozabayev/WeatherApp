@@ -18,21 +18,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="326" height="271.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bc4-1o-nRV">
-                        <rect key="frame" x="88" y="11" width="150" height="120"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="CnC-hI-g6J"/>
-                            <constraint firstAttribute="height" constant="120" id="ubA-2y-mHr"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRU-Bu-8hx">
-                        <rect key="frame" x="88" y="139" width="150" height="20.5"/>
+                        <rect key="frame" x="88" y="128" width="150" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DD2-0m-QMn">
-                        <rect key="frame" x="88" y="167.5" width="150" height="77.5"/>
+                        <rect key="frame" x="88" y="156.5" width="150" height="77.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-7g-WQq">
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="20.5"/>
@@ -54,24 +47,32 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlj-Py-owi">
+                        <rect key="frame" x="88" y="0.0" width="150" height="120"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="0qo-D4-nqz"/>
+                            <constraint firstAttribute="height" constant="120" id="ahj-b7-cKX"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bc4-1o-nRV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2Cx-my-Le6"/>
                     <constraint firstItem="DD2-0m-QMn" firstAttribute="leading" secondItem="RRU-Bu-8hx" secondAttribute="leading" id="BBz-tY-sTr"/>
-                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="trailing" secondItem="bc4-1o-nRV" secondAttribute="trailing" id="DAD-X3-dLS"/>
-                    <constraint firstItem="bc4-1o-nRV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MfM-Ov-3aj"/>
+                    <constraint firstItem="qlj-Py-owi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ISf-55-221"/>
+                    <constraint firstItem="qlj-Py-owi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MYa-eh-8NN"/>
+                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="top" secondItem="qlj-Py-owi" secondAttribute="bottom" constant="8" id="Ukc-Ye-Poo"/>
+                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="trailing" secondItem="qlj-Py-owi" secondAttribute="trailing" id="VtK-KH-IiW"/>
                     <constraint firstItem="DD2-0m-QMn" firstAttribute="trailing" secondItem="RRU-Bu-8hx" secondAttribute="trailing" id="YY3-bp-vyf"/>
-                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="leading" secondItem="bc4-1o-nRV" secondAttribute="leading" id="i7c-mf-9dn"/>
+                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="leading" secondItem="qlj-Py-owi" secondAttribute="leading" id="i8a-i1-Z2e"/>
                     <constraint firstItem="DD2-0m-QMn" firstAttribute="top" secondItem="RRU-Bu-8hx" secondAttribute="bottom" constant="8" id="p4w-Pe-q0q"/>
-                    <constraint firstItem="RRU-Bu-8hx" firstAttribute="top" secondItem="bc4-1o-nRV" secondAttribute="bottom" constant="8" id="vg0-eN-blA"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="averageTempLbl" destination="RRU-Bu-8hx" id="QvJ-4J-qLu"/>
                 <outlet property="cityNameLbl" destination="Dsy-7g-WQq" id="ySp-L4-Gk7"/>
+                <outlet property="svgImageView" destination="qlj-Py-owi" id="tuE-xj-azN"/>
                 <outlet property="todayDateLbl" destination="Z4P-wR-502" id="Gio-ME-NMv"/>
-                <outlet property="weatherImg" destination="bc4-1o-nRV" id="z0f-G2-mHR"/>
                 <outlet property="weatherOverviewLbl" destination="zg2-gq-LuA" id="Mm9-OD-e6K"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="256.37181409295357"/>
